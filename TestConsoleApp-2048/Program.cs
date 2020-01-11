@@ -10,6 +10,43 @@ namespace TestConsoleApp_2048
     {
         static void Main(string[] args)
         {
+            Program program = new Program();
+            program.Start();
+        }
+
+        Model model;
+
+        void Start()
+        {
+            Model model = new Model(4);
+            model.Start();
+            while (true)
+            {
+                Show();
+                switch (Console.ReadKey(false).Key)
+                {
+                    case ConsoleKey.LeftArrow:
+                        model.Left();
+                        break;
+                    case ConsoleKey.RightArrow:
+                        model.Right();
+                        break;
+                    case ConsoleKey.UpArrow:
+                        model.Up();
+                        break;
+                    case ConsoleKey.DownArrow:
+                        model.Down();
+                        break;
+                    case ConsoleKey.Escape:
+                        model.Start();
+                        break;
+                }
+            }
+        }
+
+        void Show()
+        { 
+        
         }
     }
 }
