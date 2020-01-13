@@ -15,6 +15,8 @@ namespace TestConsoleApp_2048
             program.Start();
         }       
 
+        Model model;
+
         void Start()
         {
             Model model = new Model(4);
