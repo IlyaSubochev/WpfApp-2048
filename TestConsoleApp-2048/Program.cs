@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Game2048;
 
 namespace TestConsoleApp_2048
 {
@@ -12,9 +13,7 @@ namespace TestConsoleApp_2048
         {
             Program program = new Program();
             program.Start();
-        }
-
-        Model model;
+        }       
 
         void Start()
         {
