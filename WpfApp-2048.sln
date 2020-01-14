@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestConcole", "TestConcole"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsoleApp-2048", "TestConsoleApp-2048\TestConsoleApp-2048.csproj", "{9B62E58F-010B-45CD-BDB0-A052E93C215A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game2048", "Game2048\Game2048.csproj", "{993C387A-1902-4FAE-BBF5-74BCC2D46D41}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{9B62E58F-010B-45CD-BDB0-A052E93C215A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B62E58F-010B-45CD-BDB0-A052E93C215A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B62E58F-010B-45CD-BDB0-A052E93C215A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{993C387A-1902-4FAE-BBF5-74BCC2D46D41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{993C387A-1902-4FAE-BBF5-74BCC2D46D41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{993C387A-1902-4FAE-BBF5-74BCC2D46D41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{993C387A-1902-4FAE-BBF5-74BCC2D46D41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
