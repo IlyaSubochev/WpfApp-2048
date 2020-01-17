@@ -6,6 +6,7 @@ namespace Game2048
     {
         Map map;
         bool isGameOver;
+        bool moved;
         static Random random = new Random();
         public int size 
         { 
@@ -53,6 +54,7 @@ namespace Game2048
                     map.Set(x, y, 0);
                     x += sx;
                     y += sy;
+                    moved = true;
                 }
         }
 
@@ -69,12 +71,14 @@ namespace Game2048
                         y -= sy;
                     }
                     map.Set(x, y, 0);
+                    moved = true;
                 }
 
         }
 
         public void Left()
         {
+            moved = false;
             for (int y = 0; y < map.size; y++)
             {
                 for (int x = 1; x < map.size; x++)
@@ -82,11 +86,12 @@ namespace Game2048
                 for (int x = 1; x < map.size; x++)
                     Join(x, y, -1, 0);
             }
-            AddRandomNumber();
+            if (moved) AddRandomNumber();
         }
 
         public void Right()
         {
+            moved = false;
             for (int y = 0; y < map.size; y++)
             {
                 for (int x = map.size - 2; x >= 0; x--)
@@ -94,11 +99,12 @@ namespace Game2048
                 for (int x = map.size - 2; x >= 0; x--)
                     Join(x, y, +1, 0);
             }
-            AddRandomNumber();
+            if (moved) AddRandomNumber();
         }
 
         public void Up()
         {
+            moved = false;
             for (int x = 0; x < map.size; x++)
             {
                 for (int y = 1; y < map.size; y++)
@@ -106,12 +112,13 @@ namespace Game2048
                 for (int y = 1; y < map.size; y++)
                     Join(x, y, 0, -1);
             }
-            AddRandomNumber();
+            if (moved) AddRandomNumber();
                 
         }
 
         public void Down()
         {
+            moved = false;
             for (int x = 0; x < map.size; x++)
             {
                 for (int y = map.size - 2; y >= 0; y--)
@@ -119,7 +126,7 @@ namespace Game2048
                 for (int y = map.size - 2; y >= 0; y--)
                     Join(x, y, 0, +1);
             }
-            AddRandomNumber();
+            if (moved) AddRandomNumber();
         }
 
         public int GetMap(int x, int y)
@@ -129,6 +136,18 @@ namespace Game2048
 
         public bool IsGameOver()
         {
+            if(isGameOver)
+                return isGameOver;
+            for (int x = 0; x < size; x++)
+                for (int y = 0; y < size; y++)
+                    if (map.Get(x, y) == 0)
+                        return false;
+            for (int x = 0; x < size; x++)
+                for (int y = 0; y < size; y++)
+                    if (map.Get(x, y) == map.Get(x + 1, y) ||
+                        map.Get(x, y) == map.Get(x, y + 1))
+                        return false;
+            isGameOver = true;
             return isGameOver;
         }
     }

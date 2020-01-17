@@ -56,7 +56,7 @@ namespace TestConsoleApp_2048
                 }
             Console.WriteLine();
             if (model.IsGameOver())
-                Console.WriteLine("Geme Over");
+                Console.WriteLine("Game Over  ");
             else
                 Console.WriteLine("Still play");
         }
