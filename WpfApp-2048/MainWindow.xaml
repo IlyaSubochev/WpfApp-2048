@@ -6,7 +6,24 @@
         xmlns:local="clr-namespace:WpfApp_2048"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Создать"/>
+                <Separator/>
+                <MenuItem Header="Выход" Click="ExitMenuItem_OnClick"/>
+            </MenuItem>
+            <MenuItem Header="Помощь">
+                <MenuItem Header="Об игре" IsEnabled="False"/>
+            </MenuItem>
+        </Menu>
+        <StatusBar DockPanel.Dock="Bottom">
+            <TextBlock>Готов к труду и обороне</TextBlock>
+        </StatusBar>
+        <TabControl>
+            <TabItem Header="Панель 1 3х3"/>
+            <TabItem Header="Панель 2 4х4"/>
+            <TabItem Header="Панель 3 5х5"/>
+        </TabControl>
+    </DockPanel>
 </Window>

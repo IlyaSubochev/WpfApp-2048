@@ -24,5 +24,10 @@ namespace WpfApp_2048
         {
             InitializeComponent();
         }
+
+        private void ExitMenuItem_OnClick(object Sender, RoutedEventArgs E)
+        {
+            Close();
+        }
     }
 }
