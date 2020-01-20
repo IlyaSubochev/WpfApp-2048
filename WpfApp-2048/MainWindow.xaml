@@ -21,9 +21,58 @@
             <TextBlock>Готов к труду и обороне</TextBlock>
         </StatusBar>
         <TabControl>
-            <TabItem Header="Панель 1 3х3"/>
-            <TabItem Header="Панель 2 4х4"/>
-            <TabItem Header="Панель 3 5х5"/>
+            <TabItem Header="Панель 4х4">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="0" Grid.Column="0"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90" Content="00" FontSize="35" ></Button>
+                    <Button Grid.Row="0" Grid.Column="1"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90" Content="01" FontSize="35" ></Button>
+                    <Button Grid.Row="0" Grid.Column="2"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90" Content="02" FontSize="35" ></Button>
+                    <Button Grid.Row="0" Grid.Column="3"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90" Content="03" FontSize="35" ></Button>
+
+
+                    <Button Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90" Content="10" FontSize="35" ></Button>
+                    <Button Grid.Row="1" Grid.Column="1"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90" Content="11" FontSize="35" ></Button>
+                    <Button Grid.Row="1" Grid.Column="2"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90" Content="12" FontSize="35" ></Button>
+                    <Button Grid.Row="1" Grid.Column="3"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90" Content="13" FontSize="35" ></Button>
+
+                    <Button Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90" Content="20" FontSize="35" ></Button>
+                    <Button Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90" Content="21" FontSize="35" ></Button>
+                    <Button Grid.Row="2" Grid.Column="2"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90" Content="22" FontSize="35" ></Button>
+                    <Button Grid.Row="2" Grid.Column="3"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90" Content="23" FontSize="35" ></Button>
+
+                    <Button Grid.Row="3" Grid.Column="0"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90" Content="30" FontSize="35" ></Button>
+                    <Button Grid.Row="3" Grid.Column="1"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90" Content="31" FontSize="35" ></Button>
+                    <Button Grid.Row="3" Grid.Column="2"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90" Content="32" FontSize="35" ></Button>
+                    <Button Grid.Row="3" Grid.Column="3"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90" Content="33" FontSize="35" ></Button>
+                </Grid>
+            </TabItem>
         </TabControl>
     </DockPanel>
 </Window>
