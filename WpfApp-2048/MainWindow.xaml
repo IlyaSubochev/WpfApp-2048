@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp_2048"
+        xmlns:local2="clr-namespace:WpfApp_2048.GameController"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <DockPanel>
@@ -22,8 +23,9 @@
         </StatusBar>
         <TabControl>
             <TabItem Header="Панель 4х4">
-                <Grid>
+                <Grid x:Name="Panel">
                     <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
@@ -35,42 +37,56 @@
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <Button Grid.Row="0" Grid.Column="0"  HorizontalAlignment="Center" Margin="2,2,2,2"
-                             VerticalAlignment="Center" Width="200" Height="90" Content="00" FontSize="35" ></Button>
-                    <Button Grid.Row="0" Grid.Column="1"  HorizontalAlignment="Center" Margin="2,2,2,2"
-                             VerticalAlignment="Center" Width="200" Height="90" Content="01" FontSize="35" ></Button>
-                    <Button Grid.Row="0" Grid.Column="2"  HorizontalAlignment="Center" Margin="2,2,2,2"
-                             VerticalAlignment="Center" Width="200" Height="90" Content="02" FontSize="35" ></Button>
-                    <Button Grid.Row="0" Grid.Column="3"  HorizontalAlignment="Center" Margin="2,2,2,2"
-                             VerticalAlignment="Center" Width="200" Height="90" Content="03" FontSize="35" ></Button>
+                    <Button x:Name="b00" Grid.Row="0" Grid.Column="0"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90"  FontSize="35" ></Button>
+                    <Button x:Name="b01" Grid.Row="0" Grid.Column="1"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90"  FontSize="35" ></Button>
+                    <Button x:Name="b02" Grid.Row="0" Grid.Column="2"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90"  FontSize="35" ></Button>
+                    <Button x:Name="b03" Grid.Row="0" Grid.Column="3"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90"  FontSize="35" ></Button>
 
 
-                    <Button Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Center" Margin="2,2,2,2"
-                             VerticalAlignment="Center" Width="200" Height="90" Content="10" FontSize="35" ></Button>
-                    <Button Grid.Row="1" Grid.Column="1"  HorizontalAlignment="Center" Margin="2,2,2,2"
-                             VerticalAlignment="Center" Width="200" Height="90" Content="11" FontSize="35" ></Button>
-                    <Button Grid.Row="1" Grid.Column="2"  HorizontalAlignment="Center" Margin="2,2,2,2"
-                             VerticalAlignment="Center" Width="200" Height="90" Content="12" FontSize="35" ></Button>
-                    <Button Grid.Row="1" Grid.Column="3"  HorizontalAlignment="Center" Margin="2,2,2,2"
-                             VerticalAlignment="Center" Width="200" Height="90" Content="13" FontSize="35" ></Button>
+                    <Button x:Name="b10" Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90"  FontSize="35" ></Button>
+                    <Button x:Name="b11" Grid.Row="1" Grid.Column="1"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90"  FontSize="35" ></Button>
+                    <Button x:Name="b12" Grid.Row="1" Grid.Column="2"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90"  FontSize="35" ></Button>
+                    <Button x:Name="b13" Grid.Row="1" Grid.Column="3"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90"  FontSize="35" ></Button>
 
-                    <Button Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Center" Margin="2,2,2,2"
-                             VerticalAlignment="Center" Width="200" Height="90" Content="20" FontSize="35" ></Button>
-                    <Button Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Center" Margin="2,2,2,2"
-                             VerticalAlignment="Center" Width="200" Height="90" Content="21" FontSize="35" ></Button>
-                    <Button Grid.Row="2" Grid.Column="2"  HorizontalAlignment="Center" Margin="2,2,2,2"
-                             VerticalAlignment="Center" Width="200" Height="90" Content="22" FontSize="35" ></Button>
-                    <Button Grid.Row="2" Grid.Column="3"  HorizontalAlignment="Center" Margin="2,2,2,2"
-                             VerticalAlignment="Center" Width="200" Height="90" Content="23" FontSize="35" ></Button>
+                    <Button x:Name="b20" Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90"  FontSize="35" ></Button>
+                    <Button x:Name="b21" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90"  FontSize="35" ></Button>
+                    <Button x:Name="b22" Grid.Row="2" Grid.Column="2"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90"  FontSize="35" ></Button>
+                    <Button x:Name="b23" Grid.Row="2" Grid.Column="3"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90"  FontSize="35" ></Button>
 
-                    <Button Grid.Row="3" Grid.Column="0"  HorizontalAlignment="Center" Margin="2,2,2,2"
-                             VerticalAlignment="Center" Width="200" Height="90" Content="30" FontSize="35" ></Button>
-                    <Button Grid.Row="3" Grid.Column="1"  HorizontalAlignment="Center" Margin="2,2,2,2"
-                             VerticalAlignment="Center" Width="200" Height="90" Content="31" FontSize="35" ></Button>
-                    <Button Grid.Row="3" Grid.Column="2"  HorizontalAlignment="Center" Margin="2,2,2,2"
-                             VerticalAlignment="Center" Width="200" Height="90" Content="32" FontSize="35" ></Button>
-                    <Button Grid.Row="3" Grid.Column="3"  HorizontalAlignment="Center" Margin="2,2,2,2"
-                             VerticalAlignment="Center" Width="200" Height="90" Content="33" FontSize="35" ></Button>
+                    <Button x:Name="b30" Grid.Row="3" Grid.Column="0"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90"  FontSize="35" ></Button>
+                    <Button x:Name="b31" Grid.Row="3" Grid.Column="1"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90"  FontSize="35" ></Button>
+                    <Button x:Name="b32" Grid.Row="3" Grid.Column="2"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90"  FontSize="35" ></Button>
+                    <Button x:Name="b33" Grid.Row="3" Grid.Column="3"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="200" Height="90"  FontSize="35" ></Button>
+
+                    <Button x:Name="btUp" Grid.Row="0" Grid.Column="4"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="100" Height="50" Content="Up" FontSize="35" 
+                            Click="btUp_Click"></Button>
+                    <Button x:Name="btDown" Grid.Row="1" Grid.Column="4"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="100" Height="50" Content="Down" FontSize="35" 
+                            Click="btDown_Click"></Button>
+                    <Button x:Name="btLeft" Grid.Row="2" Grid.Column="4"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="100" Height="50" Content="Left" FontSize="35" 
+                            Click="btLeft_Click"></Button>
+                    <Button x:Name="btRight" Grid.Row="3" Grid.Column="4"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="100" Height="50" Content="Right" FontSize="35" 
+                            Click="btRight_Click"></Button>
+
                 </Grid>
             </TabItem>
         </TabControl>

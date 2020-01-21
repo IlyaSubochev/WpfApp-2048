@@ -7,7 +7,7 @@ namespace Game2048
         Map map;
         bool isGameOver;
         bool moved;
-        static Random random = new Random();
+        static Random random = new Random();       
         public int size 
         { 
             get 
@@ -23,6 +23,7 @@ namespace Game2048
 
         public void Start()
         {
+            
             for (int x = 0; x < size; x++)
                 for (int y = 0; y < size; y++)
                     map.Set(x, y, 0);
