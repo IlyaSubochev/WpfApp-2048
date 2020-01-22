@@ -19,7 +19,7 @@
             </MenuItem>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom">
-            <TextBlock>Готов к труду и обороне</TextBlock>
+            <TextBlock x:Name="informText"></TextBlock>
         </StatusBar>
         <TabControl>
             <TabItem Header="Панель 4х4">
@@ -37,6 +37,8 @@
                         <RowDefinition/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
+                    
+                    <!--Row 0-->
                     <Button x:Name="b00" Grid.Row="0" Grid.Column="0"  HorizontalAlignment="Center" Margin="2,2,2,2"
                              VerticalAlignment="Center" Width="200" Height="90"  FontSize="35" ></Button>
                     <Button x:Name="b01" Grid.Row="0" Grid.Column="1"  HorizontalAlignment="Center" Margin="2,2,2,2"
@@ -46,7 +48,7 @@
                     <Button x:Name="b03" Grid.Row="0" Grid.Column="3"  HorizontalAlignment="Center" Margin="2,2,2,2"
                              VerticalAlignment="Center" Width="200" Height="90"  FontSize="35" ></Button>
 
-
+                    <!--Row 1-->
                     <Button x:Name="b10" Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Center" Margin="2,2,2,2"
                              VerticalAlignment="Center" Width="200" Height="90"  FontSize="35" ></Button>
                     <Button x:Name="b11" Grid.Row="1" Grid.Column="1"  HorizontalAlignment="Center" Margin="2,2,2,2"
@@ -56,6 +58,7 @@
                     <Button x:Name="b13" Grid.Row="1" Grid.Column="3"  HorizontalAlignment="Center" Margin="2,2,2,2"
                              VerticalAlignment="Center" Width="200" Height="90"  FontSize="35" ></Button>
 
+                    <!--Row 2-->
                     <Button x:Name="b20" Grid.Row="2" Grid.Column="0"  HorizontalAlignment="Center" Margin="2,2,2,2"
                              VerticalAlignment="Center" Width="200" Height="90"  FontSize="35" ></Button>
                     <Button x:Name="b21" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Center" Margin="2,2,2,2"
@@ -64,7 +67,8 @@
                              VerticalAlignment="Center" Width="200" Height="90"  FontSize="35" ></Button>
                     <Button x:Name="b23" Grid.Row="2" Grid.Column="3"  HorizontalAlignment="Center" Margin="2,2,2,2"
                              VerticalAlignment="Center" Width="200" Height="90"  FontSize="35" ></Button>
-
+                    
+                    <!--Row 3-->
                     <Button x:Name="b30" Grid.Row="3" Grid.Column="0"  HorizontalAlignment="Center" Margin="2,2,2,2"
                              VerticalAlignment="Center" Width="200" Height="90"  FontSize="35" ></Button>
                     <Button x:Name="b31" Grid.Row="3" Grid.Column="1"  HorizontalAlignment="Center" Margin="2,2,2,2"
@@ -74,18 +78,34 @@
                     <Button x:Name="b33" Grid.Row="3" Grid.Column="3"  HorizontalAlignment="Center" Margin="2,2,2,2"
                              VerticalAlignment="Center" Width="200" Height="90"  FontSize="35" ></Button>
 
-                    <Button x:Name="btUp" Grid.Row="0" Grid.Column="4"  HorizontalAlignment="Center" Margin="2,2,2,2"
-                             VerticalAlignment="Center" Width="100" Height="50" Content="Up" FontSize="35" 
-                            Click="btUp_Click"></Button>
-                    <Button x:Name="btDown" Grid.Row="1" Grid.Column="4"  HorizontalAlignment="Center" Margin="2,2,2,2"
-                             VerticalAlignment="Center" Width="100" Height="50" Content="Down" FontSize="35" 
+                    <!--Column 3-->
+                    <Grid Grid.Row="2" Grid.Column="4" Grid.RowSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        
+                        <Button x:Name="btUp" Grid.Row="0" Grid.Column="1"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="100" Height="50" Content="Up" FontSize="15" 
+                             Click="btUp_Click"></Button>
+                        <Button x:Name="btDown" Grid.Row="2" Grid.Column="1"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="100" Height="50" Content="Down" FontSize="15" 
                             Click="btDown_Click"></Button>
-                    <Button x:Name="btLeft" Grid.Row="2" Grid.Column="4"  HorizontalAlignment="Center" Margin="2,2,2,2"
-                             VerticalAlignment="Center" Width="100" Height="50" Content="Left" FontSize="35" 
+                        <Button x:Name="btLeft" Grid.Row="1" Grid.Column="0"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="100" Height="50" Content="Left" FontSize="15" 
                             Click="btLeft_Click"></Button>
-                    <Button x:Name="btRight" Grid.Row="3" Grid.Column="4"  HorizontalAlignment="Center" Margin="2,2,2,2"
-                             VerticalAlignment="Center" Width="100" Height="50" Content="Right" FontSize="35" 
+                        <Button x:Name="btRight" Grid.Row="1" Grid.Column="2"  HorizontalAlignment="Center" Margin="2,2,2,2"
+                             VerticalAlignment="Center" Width="100" Height="50" Content="Right" FontSize="15" 
                             Click="btRight_Click"></Button>
+                    </Grid>
+                    <Button x:Name="newGame" Grid.Row="0" Grid.Column="4" VerticalAlignment="Top"
+                            Width="100" Height="50" Click="newGame_Click">New Game</Button>
 
                 </Grid>
             </TabItem>

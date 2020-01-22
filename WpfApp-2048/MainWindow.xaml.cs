@@ -27,16 +27,18 @@ namespace WpfApp_2048
         {
             InitializeComponent();
             model = new Model(4);
-            model.Start();
-            Show(model);
         }
         void Show(Model model)
         {
             for (int x = 0; x < model.size; x++)
                 for (int y = 0; y < model.size; y++)
                 {
-                    Find("b" + x + y, model.GetMap(x, y).ToString());
+                    Find("b" + y + x, model.GetMap(x, y).ToString());
                 }
+            if (model.IsGameOver())
+                informText.Text = "Game Over";
+            else
+                informText.Text = "Готов к труду и обороне";
         }
         void Find(string name, string number)
         {
@@ -74,6 +76,12 @@ namespace WpfApp_2048
         private void btRight_Click(object sender, RoutedEventArgs e)
         {
             model.Right();
+            Show(model);
+        }
+
+        private void newGame_Click(object sender, RoutedEventArgs e)
+        {
+            model.Start();
             Show(model);
         }
     }
