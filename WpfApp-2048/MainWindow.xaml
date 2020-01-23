@@ -105,7 +105,7 @@
                             Click="btRight_Click"></Button>
                     </Grid>
                     <Button x:Name="newGame" Grid.Row="0" Grid.Column="4" VerticalAlignment="Top"
-                            Width="100" Height="50" Click="newGame_Click">New Game</Button>
+                            Width="100" Height="50" Click="newGame_Click" Background="Azure">New Game</Button>
 
                 </Grid>
             </TabItem>

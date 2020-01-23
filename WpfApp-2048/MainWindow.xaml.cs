@@ -33,22 +33,63 @@ namespace WpfApp_2048
             for (int x = 0; x < model.size; x++)
                 for (int y = 0; y < model.size; y++)
                 {
-                    Find("b" + y + x, model.GetMap(x, y).ToString());
+                    Find("b" + y + x, model.GetMap(x, y));
                 }
             if (model.IsGameOver())
                 informText.Text = "Game Over";
             else
                 informText.Text = "Готов к труду и обороне";
         }
-        void Find(string name, string number)
+        void Find(string name, int number)
         {
             object findButton = Panel.FindName(name);
             if (findButton is Button)
             {
                 Button bt = findButton as Button;
-                bt.Content = number;
+                bt.Content = number.ToString();
+                switch (number)
+                {
+                    case 0:
+                        bt.Background = new SolidColorBrush(Colors.Gray);
+                        break;
+                    case 2:
+                        bt.Background = new SolidColorBrush(Colors.Aqua);
+                        break;
+                    case 4:
+                        bt.Background = new SolidColorBrush(Colors.Goldenrod);
+                        break;
+                    case 8:
+                        bt.Background = new SolidColorBrush(Colors.Green);
+                        break;
+                    case 16:
+                        bt.Background = new SolidColorBrush(Colors.GreenYellow);
+                        break;
+                    case 32:
+                        bt.Background = new SolidColorBrush(Colors.Orange);
+                        break;
+                    case 64:
+                        bt.Background = new SolidColorBrush(Colors.MediumAquamarine);
+                        break;
+                    case 128:
+                        bt.Background = new SolidColorBrush(Colors.Purple);
+                        break;
+                    case 256:
+                        bt.Background = new SolidColorBrush(Colors.Yellow);
+                        break;
+                    case 512:
+                        bt.Background = new SolidColorBrush(Colors.IndianRed);
+                        break;
+                    case 1024:
+                        bt.Background = new SolidColorBrush(Colors.PapayaWhip);
+                        break;
+                    case 2048:
+                        bt.Background = new SolidColorBrush(Colors.OrangeRed);
+                        break;
+                }
             }
+           
         }
+       
 
         private void ExitMenuItem_OnClick(object Sender, RoutedEventArgs E)
         {
